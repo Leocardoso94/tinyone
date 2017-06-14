@@ -1,0 +1,30 @@
+{
+  "name": "teste-front-end",
+  "version": "1.0.0",
+  "description": "> O teste consiste em desenvolver uma página responsiva que atenda os seguintes breakpoints: 320, 768, 1024 e 1280.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp",
+    "production": "gulp --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://leocardoso94@bitbucket.org/leocardoso94/teste-front-end.git"
+  },
+  "author": "Leonardo Cardoso",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/leocardoso94/teste-front-end#readme",
+  "devDependencies": {
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-uglifycss": "^1.0.8",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "gulp-webserver": "^0.9.1"
+  }
+}
