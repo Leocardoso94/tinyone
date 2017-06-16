@@ -10,7 +10,7 @@ const sass = require('gulp-sass')
 
 
 
-gulp.task('app', ['app.html', 'app.css', 'app.js', 'app.scss','app.assets'])
+gulp.task('app', ['app.html', 'app.css', 'app.js', 'app.scss','app.img', 'app.fonts'])
 
 gulp.task('app.html', function () {
     gulp.src('app/**/*.html')
@@ -23,14 +23,19 @@ gulp.task('app.scss', function() {
     .pipe(sass().on('error', sass.logError))
     .pipe(uglifycss({ "uglyComments": true }))
     .pipe(concat('app.min.css'))
-    .pipe(gulp.dest('public/assets/css'))
+    .pipe(gulp.dest('public/css'))
 })
 
 gulp.task('app.css', function () {
     gulp.src('app/**/*.css')
     .pipe(uglifycss({ "uglyComments": true }))
     .pipe(concat('app.min.css'))
-    .pipe(gulp.dest('public/assets/css'))
+    .pipe(gulp.dest('public/css'))
+})
+
+gulp.task('app.fonts', function () {
+    gulp.src('node_modules/font-awesome/fonts/*.*')
+    .pipe(gulp.dest('public/font-awesome/'))
 })
 
 gulp.task('app.js', function () {
@@ -38,12 +43,39 @@ gulp.task('app.js', function () {
     .pipe(babel({ presets: ['es2015'] }))
     .pipe(uglify())
     .pipe(concat('app.min.js'))
-    .pipe(gulp.dest('public/assets/js'))
+    .pipe(gulp.dest('public/js'))
 })
 
-gulp.task('app.assets', function () {
-    gulp.src('assets/**/*.*')
-    .pipe(gulp.dest('public/assets'))
+gulp.task('app.img', function () {
+    gulp.src('app/img/*.*')
+    .pipe(gulp.dest('public/img'))
+})
+
+gulp.task('deps', ['deps.js', 'deps.css', 'deps.fonts'])
+
+gulp.task('deps.js', function () {
+    gulp.src([
+        ''
+        ])
+    .pipe(uglify())
+    .pipe(concat('deps.min.js'))
+    .pipe(gulp.dest('public/deps/js'))
+})
+
+gulp.task('deps.css', function () {
+    gulp.src([
+        'node_modules/font-awesome/css/font-awesome.min.css'
+        ])
+    .pipe(uglifycss({ "uglyComments": true }))
+    .pipe(concat('deps.min.css'))
+    .pipe(gulp.dest('public/deps/css'))
+})
+
+gulp.task('deps.fonts', function () {
+    gulp.src([
+        'node_modules/font-awesome/fonts/*.*'
+        ])
+    .pipe(gulp.dest('public/deps/fonts'))
 })
 
 gulp.task('server', ['watch'], function () {
@@ -56,13 +88,13 @@ gulp.task('server', ['watch'], function () {
 
 
 gulp.task('watch', function () {
-    watch('app/**/*.html', () => gulp.start('app.html'))
-    watch('app/**/*.css', () => gulp.start('app.css'))
-    watch('app/**/*.js', () => gulp.start('app.js'))
-    watch('app/**/*.scss', () => gulp.start('app.scss'))
-    watch('assets/**/*.*', () => gulp.start('app.assets'))
+    watch('app/*.html', () => gulp.start('app.html'))
+    watch('app/css/*.css', () => gulp.start('app.css'))
+    watch('app/js/*.js', () => gulp.start('app.js'))
+    watch('app/css/*.scss', () => gulp.start('app.scss'))
+    watch('app/img/*.*', () => gulp.start('app.img'))
 })
 
 gulp.task('default', function () {
-  gulp.start('app', 'server')    
+  gulp.start('app', 'server', 'deps')    
 })
