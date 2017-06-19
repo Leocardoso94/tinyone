@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<title>tinyone</title>
 	<link href="css/app.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="deps/css/deps.min.css">
@@ -9,17 +10,21 @@
 <body>
 	<section id="header">
 		<div class="content">
-			<nav>
-				<div class="logo">
-					<img src="img/finger.gif" alt="">
-					<a href="">tinyone</a>
-				</div>				
-				<ul>
-					<li><a href="#">Features</a></li>
-					<li><a href="#">Support</a></li>
-					<li><a href="#">Blog</a></li>
-				</ul>
-			</nav>
+			<header>	
+				<nav>
+					<div class="logo">
+						<img src="img/finger.gif" alt="">
+						<a href="">tinyone</a>
+					</div>
+					
+					<label  class="control-nav"></label>								
+					<ul>
+						<li><a href="#">Features</a></li>
+						<li><a href="#">Support</a></li>
+						<li><a href="#">Blog</a></li>
+					</ul>
+				</nav>
+			</header>
 			<div class="slider">
 				<div id="slide1">
 					<div class="text">
@@ -33,13 +38,43 @@
 					<div class="img">
 						<img src="img/tablet.gif" alt="">
 					</div>
-				</div>
-				<div class="sliderBullets">
-					<i class="fa fa-circle" aria-hidden="true"></i>
-					<i class="fa fa-circle" aria-hidden="true"></i>
-					<i class="fa fa-circle" aria-hidden="true"></i>
-				</div>	
+				</div>				
 			</div>
+			<div class="slider">
+				<div id="slide2">
+					<div class="text">
+						<h1>Slide 2</h1>
+						<h3>Simple to use for your app, products showcase and your inspiration</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin viverra risus a eros volutpat tempor. In quis arcu et eros porta lobortis sit </p>
+						<i class="fa fa-rocket" aria-hidden="true"></i>
+						<i class="fa fa-shield" aria-hidden="true"></i>
+						<i class="fa fa-trophy" aria-hidden="true"></i>
+					</div>
+					<div class="img">
+						<img src="img/tablet.gif" alt="">
+					</div>
+				</div>				
+			</div>
+			<div class="slider">
+				<div id="slide3">
+					<div class="text">
+						<h1>Slide 3</h1>
+						<h3>Simple to use for your app, products showcase and your inspiration</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin viverra risus a eros volutpat tempor. In quis arcu et eros porta lobortis sit </p>
+						<i class="fa fa-safari" aria-hidden="true"></i>
+						<i class="fa fa-chrome" aria-hidden="true"></i>
+						<i class="fa fa-edge" aria-hidden="true"></i>
+					</div>
+					<div class="img">
+						<img src="img/tablet.gif" alt="">
+					</div>
+				</div>				
+			</div>
+			<div class="sliderBullets">
+				<i class="fa bullet active fa-circle" aria-hidden="true"></i>
+				<i class="fa bullet fa-circle" aria-hidden="true"></i>
+				<i class="fa bullet fa-circle" aria-hidden="true"></i>
+			</div>	
 		</div>
 	</section>
 	<section id="features">
@@ -127,5 +162,6 @@
 			</footer>
 		</div>
 	</section>
+	<script src="js/app.min.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>
